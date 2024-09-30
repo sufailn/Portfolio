@@ -1,153 +1,16 @@
 <div class="main">
-  <div class="navBar">
-    <div class="nav" (click)="showNavOneContent()" [ngClass]="{'select':navNumber==1}"> About Me </div>
-    <div class="nav"(click)="showNavTwoContent()" [ngClass]="{'select':navNumber==2}">  Projects </div>
-    <div class="nav"(click)="showNavThreeContent()"[ngClass]="{'select':navNumber==3}"> Skills </div>
-    <div class="nav"(click)="showNavFourContent()"[ngClass]="{'select':navNumber==4}"> Contact </div>
-  </div>
-  <div class="about" *ngIf="navNumber==1">
-    <div class="ab1">
-      <h1>About Me</h1>
-      <img src="/profile.png" class="profile" alt="Profile Picture">
-      <p class="text">
-       <b class="b">Hello!</b> My name is <b class="b">Sufail Ahammed  </b>and I am 25 years old. I recently graduated with a Master of Computer Applications <b class="b">(MCA)</b> degree. With a strong background in computer applications and a passion for technology, I have developed a diverse set of skills in software development, web development, and data analysis.
-    </p>
-    <p class="text">
-      Throughout my academic journey, I have worked on various projects that have honed my problem-solving abilities and equipped me with the knowledge to tackle complex challenges. I am particularly interested in exploring new technologies and applying my skills to create innovative solutions.
-  </p>
-  <p class="text">
-    I am a dedicated and proactive individual who enjoys collaborating with others and continuously learning to stay updated with the latest trends in the tech industry. I am excited to embark on my professional journey and contribute to impactful projects.
-</p>
-<p class="text">
-  Feel free to browse through my portfolio to see some of the work I have done. I look forward to connecting with like-minded professionals and exploring opportunities where I can make a positive impact.
-</p>
-</div>
-</div>
-  <div class="Projects" *ngIf="navNumber==2">
-    <div id="projects" class="section">
-      <div class="projects-section">
-          <h1>Projects</h1>
-          <div class="project-bar">
-              <img src="/smart.jpg" alt="Project 1" class="img">
-              <div class="project-details">
-                  <h2><b class="b">Smart Licence</b> </h2>
-                  <p><li>Smart License improves vehicle safety with sensors and RFID authentication.</li>
-                    <li>It stops unauthorized access and prevents engine startup if alcohol levels are high.</li>
-                    <li>Manual engine control works seamlessly with RFID,It monitors speed .</li>
-                    <li>The user-friendly app provides alerts and notifications for vehicle status and safety</li>
-          
-                    <b class="b"><i>Software Requirements</i></b> 
-                    <li>python(flask)</li>
-                    <li>Dart(flutter)</li>
-                    <li>Sqlyog</li>
-                    <b class="b"><i>Hardware Requirements</i></b> 
-                    <li>Arduino Uno</li>
-                  </p>
-                 
-                    
-                    
-              </div>
-          </div>
-          <div class="project-bar">
-              <img src="/prelern.png" alt="Project 2" class="img">
-              <div class="project-details">
-                   <h2><b class="b">PRE LEARN</b> </h2>
-                  <p>Pre-Learn" transforms preschool education, addressing limitations, enhancing collaboration, andenriching the
-                    learning environment with real-time updates and seamless communication.Ongoing innovations demonstrate a
-                    commitment to efficiency, fundamentally reshaping the preschool experience
-                    </p>
-              </div>
-          </div>
-          <div class="project-bar">
-              <img src="/face.png" alt="Project 3" class="img">
-              <div class="project-details">
-                <h2><b class="b">Attendence system using face detection</b> </h2>
-                  <p>Hostel attence system using face detection</p>
-                    <b class="b"><i>Software Requirements</i></b> 
-<li>Python(Django)</li>
-<li>SQLite</li>
-<li>Open Cv </li>
-              </div>
-          </div>
-      </div>
-  </div>
-  </div>
-
-
-  <div class="Skills" *ngIf="navNumber==3">
-     <div id="skills" class="section">
-        <div class="skills-section">
-            <h1>Skills</h1>
-            <div class="skill-bar">
-                <div class="skill-info">
-                    <span>HTML</span>
-                    <span>90%</span>
-                </div>
-                <div class="skill-progress">
-                    <div class="progress" style="width: 90%;"></div>
-                </div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-info">
-                    <span>CSS</span>
-                    <span>85%</span>
-                </div>
-                <div class="skill-progress">
-                    <div class="progress" style="width: 85%;"></div>
-                </div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-info">
-                    <span>JavaScript</span>
-                    <span>80%</span>
-                </div>
-                <div class="skill-progress">
-                    <div class="progress" style="width: 80%;"></div>
-                </div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-info">
-                    <span>Python</span>
-                    <span>75%</span>
-                </div>
-                <div class="skill-progress">
-                    <div class="progress" style="width: 75%;"></div>
-                </div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-info">
-                    <span>Java</span>
-                    <span>70%</span>
-                </div>
-                <div class="skill-progress">
-                    <div class="progress" style="width: 70%;"></div>
-                </div>
-            </div>
-        </div>
+    <div class="navBar">
+        <div class="nav" [routerLink]="['/about']" routerLinkActive="select">About Me</div>
+        <div class="nav" [routerLink]="['/projects']" routerLinkActive="select">Projects</div>
+        <div class="nav" [routerLink]="['/skills']" routerLinkActive="select">Skills</div>
+        <div class="nav" [routerLink]="['/contact']" routerLinkActive="select">Contact</div>
     </div>
-    </div>
-
-  <div class="Contact" *ngIf="navNumber==4">
-    <div id="contact" class="section">
-      <div class="contact-section">
-          <h1>Contact</h1>
-          <form action="submit_form.php" method="post">
-              <div class="form-group">
-                  <label for="name">Name:</label>
-                  <input type="text" id="name" name="name" required>
-              </div>
-              <div class="form-group">
-                  <label for="email">Email:</label>
-                  <input type="email" id="email" name="email" required>
-              </div>
-              <div class="form-group">
-                  <label for="message">Message:</label>
-                  <textarea id="message" name="message" rows="5" required></textarea>
-              </div>
-              <button type="submit">Send Message</button>
-          </form>
-      </div>
-  </div>
-  </div>
-
+    <router-outlet></router-outlet>
 </div>
+
+
+
+
+
+
+  
